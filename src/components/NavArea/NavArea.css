@@ -1,0 +1,44 @@
+.logo {
+    width: 120.26px;
+    height: 56px;
+}
+
+.nav-link {
+    color: #fff;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    margin-right: 20px;
+}
+
+.login-btn {
+    width: 104px;
+    height: 35px;
+    background: #F9A51A;
+    border-radius: 5px;
+    border: none;
+}
+
+.searchInput {
+    width: 370px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    outline-color: #fff;
+    margin-right: 15px;
+    padding: 0 10px;
+    color: #fff;
+}
+
+.searchInput::placeholder {
+    color: #fff;
+}
+
+@media screen and (max-width:425px){
+    .searchInput {
+        width: 280px;
+    }
+}
