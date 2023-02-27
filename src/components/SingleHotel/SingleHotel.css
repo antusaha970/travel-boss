@@ -1,0 +1,12 @@
+.room-container {
+    display: flex;
+}
+
+.room-img {
+    width: 270px;
+    height: 140px;
+}
+
+.text-area{
+    padding: 0 10px;
+}

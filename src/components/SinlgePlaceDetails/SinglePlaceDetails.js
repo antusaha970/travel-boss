@@ -5,14 +5,18 @@ import { Container } from 'react-bootstrap';
 import { PlaceContext } from '../../App';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../../App';
 
 const SinglePlaceDetails = () => {
     const [currentPlace, setCurrentPlace] = useContext(PlaceContext);
+    const [user, setUser,isLoggedIn, setIsLoggedIn] = useContext(UserContext);
+    
     const navigate = useNavigate();
-
+    console.log(isLoggedIn);
+    
     const handleSubmit = (e)=>{
         e.preventDefault();
-        navigate('/login');
+        isLoggedIn ? navigate('/hotels'): navigate('/login');
     }
 
     return (

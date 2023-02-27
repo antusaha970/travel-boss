@@ -147,7 +147,7 @@ const Login = () => {
                         <input type="email" placeholder='Email' id='email' className='login-form-inp' required />
                         <input type="password" placeholder='Password' id='password' className='login-form-inp' required />
                         {
-                            !isOldUser && <input type="password" placeholder='Confirm Password' id='confirmPassword' className='login-form-inp' required />
+                            !isOldUser && <input type="password" placeholder='Confirm Password' id='confirmPassword' className='login-form-inp' required  autoComplete='New Pass'/>
                         }
                         {
                             !isOldUser ? <input type="submit" value="Create an account" className='login-btn w-100' /> :
