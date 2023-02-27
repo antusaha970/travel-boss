@@ -37,7 +37,7 @@ const SinglePlaceDetails = () => {
                                 </div>
                                 <div className="from-group">
                                     <label htmlFor="destination">Destination</label>
-                                    <input className='bookingInp' type="text" id='destination' value={currentPlace.name} />
+                                    <input className='bookingInp' type="text" id='destination' defaultValue={currentPlace.name} />
                                 </div>
                                 <div className="from-group">
                                     <div className="date-pick">
