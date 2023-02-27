@@ -1,20 +1,30 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import './PlaceSelection.css';
 import { useState } from 'react';
 import placesData from '../../PlacesData';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleLeft, faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
+import { PlaceContext } from '../../App';
 
 const PlaceSelection = () => {
     const [places, setPlaces] = useState(placesData);
-    const [currentPlace, setCurrentPlace] = useState(places[0]);
+    const [currentPlace, setCurrentPlace] = useContext(PlaceContext);
 
+    useEffect(()=>{
+        setCurrentPlace(places[0]);
+    },[])
+
+
+    const navigate = useNavigate();
     const handlePlaceSelect = (ind)=>{
         setCurrentPlace(places[ind]);
     }
 
-    
+    const handleBookClick = (id) =>{
+        navigate(`/booking/${id}`);
+    }
 
     return (
         <Container fluid>
@@ -22,7 +32,7 @@ const PlaceSelection = () => {
                 <div className="col-md-4 places-info-box">
                     <h1 className='placeTitle'>{currentPlace.name}</h1>
                     <p className='placeDescription'>{currentPlace.description}</p>
-                    <button className='login-btn'>Book <FontAwesomeIcon icon={ faArrowAltCircleRight} /></button>
+                    <button className='login-btn' onClick={()=>handleBookClick(currentPlace.id)}>Book <FontAwesomeIcon icon={ faArrowAltCircleRight} /></button>
                 </div>
                 <div className="col-md-8">
                     <div className="row g-0 text-center">
