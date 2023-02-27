@@ -7,6 +7,7 @@ import { initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../Firebase/firebase';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { UserContext } from '../../App';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -16,6 +17,9 @@ const app = initializeApp(firebaseConfig);
 const Login = () => {
     const [isOldUser, setIsOldUser] = useState(false);
     const [user, setUser,isLoggedIn, setIsLoggedIn] = useContext(UserContext);
+
+
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -53,6 +57,7 @@ const Login = () => {
                     }
                     setUser(newUser);
                     setIsLoggedIn(true);
+                    navigate('/hotels');
                     // ...
                 })
                 .catch((error) => {
@@ -70,11 +75,12 @@ const Login = () => {
                     const user = userCredential.user;
                     alert(`Welcome ${user.email}!`);
                     const newUser = {
-                        name: document.getElementById('name').value,
+                        name: user.displayName,
                         email: email
                     }
                     setUser(newUser);
                     setIsLoggedIn(true);
+                    navigate('/hotels');
                     // ...
                 })
                 .catch((error) => {
@@ -99,11 +105,12 @@ const Login = () => {
                 // IdP data available using getAdditionalUserInfo(result)
                 alert(`Welcome ${user.email}!`);
                 const newUser = {
-                    name: document.getElementById('name').value,
+                    name: user.displayName,
                     email: user.email
                 }
                 setUser(newUser);
                 setIsLoggedIn(true);
+                navigate('/hotels');
                 // ...
             }).catch((error) => {
                 // Handle Errors here.
