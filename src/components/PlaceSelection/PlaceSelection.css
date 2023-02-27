@@ -1,0 +1,43 @@
+.placeImg {
+    height: 416px;
+    width: 270px;
+    border-radius: 20px;
+}
+
+.img-container {
+    position: relative;
+}
+
+.placeTag {
+    position: absolute;
+    top: 300px;
+    display: block;
+    width: 270px;
+    margin-left: 13px;
+    cursor: pointer;
+    border-radius: 20px;
+    height: 120px;
+    text-align: center;
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 43px;
+}
+
+.placeTitle {
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 97.6842px;
+    line-height: 117px;
+}
+
+.placeDescription {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
